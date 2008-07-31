@@ -1,0 +1,9 @@
+%p.location
+  Location:
+  - @page.ancestors.reverse.each do |page|
+    - text = (page.title if page.slug == '/') || page.slug
+    = link_to text, page_edit_path(page)
+    = '/' if page.ancestors
+  = @page.slug
+    
+- @content_for_page_css = '#content .form-area p.location { float: none; color: #666; font-size: 0.8em; }'
