@@ -2,7 +2,7 @@
   Location:
   - @page.ancestors.reverse.each do |page|
     - text = (page.title if page.slug == '/') || page.slug
-    = link_to text, page_edit_path(page)
+    = link_to text, page_edit_path(page), :title => page.title
     = '/' if page.ancestors
   = @page.slug
     
